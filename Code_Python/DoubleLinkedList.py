@@ -13,7 +13,7 @@ Notes
 - Examples of usage are at the end of the file.
 - Reference: "Problem Solving with Algorithms and Data Structures", by
   Miller and Ranum.
-- get_node_list() is an helper function that returns a list with the content
+- get_node_list() is a helper function that returns a list with the content
   of all connected nodes starting from a given node and moving up or down.
 
 
@@ -155,7 +155,7 @@ class DLnode:
 
 class DLL:
     """
-    Double-linked list class
+    Double-linked list class.
     """
     def __init__(self, init_list=None):
         """
