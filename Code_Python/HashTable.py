@@ -473,7 +473,7 @@ class HashTable:
 
 if __name__ == '__main__':
     """
-    Test the HashTable class and the functions about the prime numbers.
+    Test the HashTable class and the prime number functions.
     """
     # Examples with prime numbers
 
