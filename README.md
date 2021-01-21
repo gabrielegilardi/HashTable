@@ -1,75 +1,66 @@
-# Basic Data Structures
+# Hash Table Data Structure
 
-Stack, queue, priority queue, and binary heap data structures.
+Hash table class implementation using lists and double-linked lists.
 
 ## Reference
 
-[Problem Solving with Algorithms and Data Structures](https://runestone.academy/runestone/books/published/pythonds/index.html), by Miller and Ranum.
+[Problem Solving with Algorithms and Data Structures](runestone.academy/runestone/books/published/pythonds/index.html), by Miller and Ranum.
 
-## Files
+Prime numbers on [GeekforGeeks](geeksforgeeks.org/prime-numbers) and on [Wikipedia](en.wikipedia.org/wiki/Prime_number).
 
-`Stack.py` Stack data structure using lists.
+## File
 
-```python
-"""
-__init__()      Initializes the stack.
-__repr_()       Returns the string representation of the stack.
-is_empty()      Checks if the stack is empty.
-push()          Adds one item to the top of the stack.
-pop()           Returns and removes the item at the top of the stack.
-peek()          Returns the item at the top of the stack.
-reverse()       Reverses the stack.
-clear()         Removes all items from the stack.
-"""
-```
-
-`Queue.py` Queue data structure using lists.
+`HashTable.py` Hash table class and prime number helper functions.
 
 ```python
 """
-__init__()      Initializes the priority queue.
-__repr_()       Returns the string representation of the queue.
-is_empty()      Checks if the queue is empty.
-enqueue()       Adds one item to the back of the queue.
-dequeue()       Returns and removes the item at the front of the queue.
-peek()          Returns the item at the front of the queue.
-reverse()       Reverses the queue.
-clear()         Removes all items from the queue.
+HashTable Class:
+size            Size of the hash table.
+hashing         Hashing method.
+collision       Collision resolution method.
+c               Factor in the multiplication hashing method.
+digit           Number of digits in the folding hashing method.
+table           Hash table
+n_slots         Number of occupied slots.
+n_items         Number of items in the table
+state           State table to track deleted/never deleted slosts.
+skip            Skip value in the rehashing collision resolution method.
+fact            Factor in the quadratic collision resolution method.
+__init__()      Initializes the hash table.
+__repr__()      Returns stats and info about the hash table.
+load_factor()   Returns the load factor of the hash table.
+items()         Returns a list of tuples with all items in the hash table.
+convert()       Returns the integer value associated with an item.
+hash_index()    Returns the hash (slot) index given an integer value.
+insert()        Inserts an item in the hash table.
+delete()        Deletes an item from the hash table.
+search()        Searches an item in the hash table.
+clear()         Removes all items from the hash table.
+
+Prime number functions:
+is_prime_det()      Deterministically check if a given value is a prime number.
+is_prime_prob()     Probabilistically check if a given value is a prime number.
+find_prime()        find the closest (higher) prime number to a given value.
 """
 ```
 
-`PriorityQueue.py` Priority queue (max/min) data structure using lists.
+- Written and tested in Python 3.8.5.
 
-```python
-"""
-__init__()      Initializes the priority queue.
-__repr_()       Returns the string representation of the priority queue.
-is_empty()      Checks if the priority queue is empty.
-put()           Adds one item to the priority queue.
-get()           Returns and removes the item at the front of the priority queue.
-peek()          Returns the item at the front of the priority queue.
-reverse()       Reverses the priority queue (from min to max and viceversa).
-clear()         Removes all items from the priority queue.
-"""
-```
+- Hashing methods: folding, multiplication, remainder.
 
-`BinaryHeap.py` Binary heap (max/min) data structure using lists.
+- Collision resolution methods: rehashing, quadratic, chaining.
 
-```python
-"""
-__init__()      Initializes the binary heap.
-__repr_()       Returns the string representation of the binary heap.
-is_empty()      Checks if the binary heap is empty.
-swap_up()       Swaps an item up to preserve the binary heap property.
-swap_down()     Swaps an item down to preserve the binary heap property.
-put()           Adds one item to the binary heap.
-get()           Returns and removes the item at the root of the binary heap.
-peek()          Returns the item at the root of the binary heap.
-reverse()       Reverses the binary heap (from min to max and viceversa).
-clear()         Removes all items from the binary heap.
-"""
-```
+- Items converted to integer using the ordinal value and positional weight.
 
-## Examples and Notes
+- Rehashing method can work with any skip value, quadratic method can work
+  with any multiplicative factor.
 
-See each file.
+- Possible to pass an initial list of values when creating the hash table.
+
+- Possible to have duplicate values (search will return the first occurrence).
+
+- The double-linked list class is from [here](github.com/gabrielegilardi/LinkedLists.git)
+
+## Examples
+
+Examples of usage are at the end of the file.
