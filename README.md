@@ -4,9 +4,9 @@ Hash table and dictionary class implementation using lists and double-linked lis
 
 ## References
 
-[Problem Solving with Algorithms and Data Structures](runestone.academy/runestone/books/published/pythonds/index.html), by Miller and Ranum.
+[Problem Solving with Algorithms and Data Structures](https://runestone.academy/runestone/books/published/pythonds/index.html), by Miller and Ranum.
 
-Prime numbers on [GeekforGeeks](geeksforgeeks.org/prime-numbers) and on [Wikipedia](en.wikipedia.org/wiki/Prime_number).
+Prime numbers on [GeekforGeeks](https://www.geeksforgeeks.org/prime-numbers/) and on [Wikipedia](https://en.wikipedia.org/wiki/Prime_number).
 
 ## Files
 
