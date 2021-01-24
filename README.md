@@ -101,4 +101,4 @@ clear()         Removes all items from the dictionary.
 
 ## Examples
 
-Examples of usage are at the end each file.
+Examples of usage are at the end of each file.
