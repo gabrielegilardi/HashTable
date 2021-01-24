@@ -92,6 +92,8 @@ clear()         Removes all items from the dictionary.
 
 - Possible to define the skip value to be used in the hash table.
 
+- Easy to resize the dictionary and change the skip value (see example).
+
 - Methods in this class has been written trying to use the HashTable class as
   is, and thus they may not be the best in term of efficiency.
 

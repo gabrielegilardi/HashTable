@@ -12,6 +12,7 @@ Notes
   resolution method.
 - Possible to pass an initial list of items when creating the dictionary.
 - Possible to define the skip value to be used in the hash table.
+- Easy to resize the dictionary and change the skip value (see example).
 - Methods in this class has been written trying to use the HashTable class as
   is, and thus they may not be the best in term of speed.
 - Examples of usage are at the end of the file.
@@ -282,10 +283,31 @@ if __name__ == '__main__':
     # - load factor = 0.412
     print(d)
 
+    print('\n==== Resulting dictionary and stats after resizing:')
+    init_list = d.get_items()
+    d = Dict(13, init_list=init_list, skip=1)
+
+    # ('key2', (6.4, 3.3))
+    # ('key10', False)
+    # ('key9', 'hello world')
+    # ('key7', 77)
+    # ('key4', True)
+    # ('key1', 320)
+    # ('key8', -997)
+    items = d.get_items()
+    for item in items:
+        print(item)
+
+    # Dictionary object
+    # - total size = 13
+    # - number of items = 7
+    # - load factor = 0.538
+    print(d)
+
     d.clear()
     print('\n==== Resulting stats after clear:')
     # Dictionary object
-    # - total size = 17
+    # - total size = 13
     # - number of items = 0
     # - load factor = 0.000
     print(d)
