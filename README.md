@@ -10,7 +10,7 @@ Prime numbers on [GeekforGeeks](geeksforgeeks.org/prime-numbers) and on [Wikiped
 
 ## Files
 
-`HashTable.py` Hash table class implementation using lists and double-linked lists and prime number helper functions.
+`HashTable.py` Hash table class implementation using lists and double-linked lists.
 
 ```python
 """
@@ -59,7 +59,7 @@ find_prime()        Find the closest (higher) prime number to a given value.
 
 - Possible to have duplicate values (search will return the first occurrence).
 
-`Dictionary.py` Dictionary data structure implementation using a hash table.
+`Dictionary.py` Dictionary class implementation using a hash table.
 
 ```python
 """
