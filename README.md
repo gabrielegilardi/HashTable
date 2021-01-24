@@ -97,7 +97,7 @@ clear()         Removes all items from the dictionary.
 - Methods in this class has been written trying to use the HashTable class as
   is, and thus they may not be the best in term of efficiency.
 
-`DoubleLinkedList.py` Double-linked list class implementation using a double-list node class (see [here](github.com/gabrielegilardi/LinkedLists.git)).
+`DoubleLinkedList.py` Double-linked list class implementation using a double-list node class (see [here](https://github.com/gabrielegilardi/LinkedLists)).
 
 ## Examples
 

@@ -16,8 +16,8 @@ Notes
 - Methods in this class has been written trying to use the HashTable class as
   is, and thus they may not be the best in term of speed.
 - Examples of usage are at the end of the file.
-- Reference: "Problem Solving with Algorithms and Data Structures", by
-  Miller and Ranum.
+- "Problem Solving with Algorithms and Data Structures", by Miller and Ranum,
+  @ runestone.academy/runestone/books/published/pythonds/index.html
 
 Dict Class
 ----------

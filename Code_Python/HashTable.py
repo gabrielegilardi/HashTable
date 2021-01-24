@@ -25,12 +25,12 @@ Notes
 
 References
 ----------
-- "Problem Solving with Algorithms and Data Structures", by Miller and Ranum:
-   runestone.academy/runestone/books/published/pythonds/index.html
+- "Problem Solving with Algorithms and Data Structures", by Miller and Ranum,
+  @ runestone.academy/runestone/books/published/pythonds/index.html
 - Prime numbers:
-  geeksforgeeks.org/prime-numbers, en.wikipedia.org/wiki/Prime_number
+  @ geeksforgeeks.org/prime-numbers, en.wikipedia.org/wiki/Prime_number
 - Double-linked list class:
-  github.com/gabrielegilardi/LinkedLists.git
+  @ github.com/gabrielegilardi/LinkedLists.git
 
 HashTable Class
 ---------------
