@@ -1,6 +1,6 @@
-# Hash Table Data Structure
+# Hash Table and Dictionary Data Structures
 
-Hash table class implementation using lists and double-linked lists.
+Hash table and dictionary class implementation using lists and double-linked lists.
 
 ## Reference
 
@@ -8,9 +8,9 @@ Hash table class implementation using lists and double-linked lists.
 
 Prime numbers on [GeekforGeeks](geeksforgeeks.org/prime-numbers) and on [Wikipedia](en.wikipedia.org/wiki/Prime_number).
 
-## File
+## Files
 
-`HashTable.py` Hash table class and prime number helper functions.
+`HashTable.py` Hash table class implementation using lists and double-linked lists and prime number helper functions.
 
 ```python
 """
@@ -40,7 +40,7 @@ clear()         Removes all items from the hash table.
 Prime number functions:
 is_prime_det()      Deterministically check if a given value is a prime number.
 is_prime_prob()     Probabilistically check if a given value is a prime number.
-find_prime()        find the closest (higher) prime number to a given value.
+find_prime()        Find the closest (higher) prime number to a given value.
 """
 ```
 
@@ -59,8 +59,44 @@ find_prime()        find the closest (higher) prime number to a given value.
 
 - Possible to have duplicate values (search will return the first occurrence).
 
-- The double-linked list class is from [here](github.com/gabrielegilardi/LinkedLists.git)
+`Dictionary.py` Dictionary data structure implementation using a hash table.
+
+```python
+"""
+Dict Class:
+size            Size of the dictionary.
+skip            Skip value in the rehashing collision resolution method.
+n_items         Number of items (pair key-values) in the dictionary.
+keys            Hash table with the dictionary keys.
+values          List with the dictionary values.
+__init__()      Initializes the dictionary.
+__repr__()      Returns info about the dictionary.
+is_empty()      Checks if the dictionary is empty or not.
+get_items()     Returns a list of all items in the dictionary.
+get_keys()      Returns a list of all keys in the dictionary.
+get_value()     Returns a list of all values in the dictionary.
+put()           Adds a new item to the dictionary.
+get()           Returns the value associated with a key.
+search()        Searches the dictionary for a key.
+remove()        Removes an item from the dictionary.
+clear()         Removes all items from the dictionary.
+"""
+```
+
+- Written and tested in Python 3.8.5.
+
+- Hash table uses 'remainder' as hashing method and 'rehashing' as collision
+  resolution method.
+
+- Possible to pass an initial list of items when creating the dictionary.
+
+- Possible to define the skip value to be used in the hash table.
+
+- Methods in this class has been written trying to use the HashTable class as
+  is, and thus they may not be the best in term of efficiency.
+
+`DoubleLinkedList.py` Double-linked list class implementation using a double-list node class (see [here](github.com/gabrielegilardi/LinkedLists.git)).
 
 ## Examples
 
-Examples of usage are at the end of the file.
+Examples of usage are at the end each file.

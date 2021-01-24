@@ -301,12 +301,10 @@ class HashTable:
 
     def insert(self, item):
         """
-        Inserts an item in the hash table and returns <True>. Returns <False>
-        if it could not find an empty slot (only when using the rehashing or
-        the quadratic hashing method).
-
-        Hashing methods: folding, multiplication, remainder.
-        Collision resolution methods: chaining, rehashing, quadratic.
+        Inserts an item in the hash table. When using chaining, returns the
+        slot and the node object. When using rehashing/quadratic, returns the
+        slot. Returns <None> if could not find an empty slot (only when using
+        rehashing/quadratic).
 
         Notes for the rehashing/quadratic methods:
         - They have been lumped together playing on the value of parameters
@@ -327,45 +325,45 @@ class HashTable:
         # Call the hashing method
         slot = self.hash_index(int_value)
 
-        # If the slot is empty insert the item
-        if (self.table[slot] is None):
+        # If using chaining
+        if (self.collision == 'chaining'):
 
-            # If using chaining
-            if (self.collision == 'chaining'):
+            self.n_items += 1
+
+            # If the slot is empty init the DLL and insert the item
+            if (self.table[slot] is None):
                 self.table[slot] = DLL([item])
+                self.n_slots += 1
+                return (slot, self.table[slot].head)
 
-            # If using rehashing/quadratic
+            # If the slot is not empty add the item to the back of the DLL
             else:
-                self.table[slot] = item
+                return (slot, self.table[slot].add_back(item))
 
-            self.n_slots += 1
-
-        #  If the slot is not empty solve collision problem
+        # If using rehashing/quadratic
         else:
 
-            # If using chaining
-            if (self.collision == 'chaining'):
-                self.table[slot].add_back(item)
+            # If the slot is empty insert the item
+            if (self.table[slot] is None):
+                self.table[slot] = item
 
-            # If using rehashing/quadratic
+            # If the slot is not empty
             else:
                 i = 0
-                new_slot = slot
-                while (self.table[new_slot] is not None):
+                slot0 = slot
 
+                while (self.table[slot] is not None):
                     i += 1
                     if (i == self.size):        # Could not find an empty slot
-                        return False
-                    new_slot = (slot + (self.skip + self.fact * i) * i) \
-                                % self.size
+                        return None
+                    slot = (slot0 + (self.skip + self.fact * i) * i) % self.size
 
-                # Found an empty slot
-                self.table[new_slot] = item
-                self.n_slots += 1
+                self.table[slot] = item         # Found an empty slot
 
-        self.n_items += 1
+            self.n_slots += 1
+            self.n_items += 1
 
-        return True
+            return slot
 
     def delete(self, item):
         """
@@ -475,7 +473,7 @@ if __name__ == '__main__':
     """
     Test the HashTable class and the prime number functions.
     """
-    # Examples with prime numbers
+    print('\n\n------- Examples with prime numbers -------')
 
     print('\n==== Check if 15 is prime:')
     print('- deterministic method:', is_prime_det(15))              # False
@@ -485,8 +483,7 @@ if __name__ == '__main__':
     print('- deterministic method:', find_prime(15))                        # 17
     print('- probabilistic method:', find_prime(15, method='prob', k=3))    # 17
 
-    # Examples using 'remainder' as hashing method and 'chaining' as collision
-    # method
+    print('\n\n------- Examples using "remainder" and "chaining" -------')
 
     print('\n==== Create a hash table with size of 17 and add items:')
     ht = HashTable(17, init_list=[320, (6.4, 3.3), 's', True, 'hello', -10.2],
@@ -530,7 +527,7 @@ if __name__ == '__main__':
     print(ht.delete('s'))               # True
     print(ht.delete('not here'))        # False
 
-    print('\n==== Resulting table and stats:')
+    print('\n==== Resulting table and stats after delete:')
     # (1, [(6.4, 3.3)])
     # (2, ['hello'])
     # (4, ['hello world'])
@@ -550,8 +547,7 @@ if __name__ == '__main__':
     # - collision method = chaining
     print(ht)
 
-    # Examples using 'folding' as hashing method and 'rehashing' as
-    # collision method
+    print('\n\n------- Examples using "folding" and "rehashing" -------')
 
     print('\n==== Create a hash table with size of 17 and add items:')
     ht = HashTable(17, init_list=[320, (6.4, 3.3), 's', True, 'hello', -10.2],
@@ -599,7 +595,7 @@ if __name__ == '__main__':
     print(ht.delete('s'))               # True
     print(ht.delete('not here'))        # False
 
-    print('\n==== Resulting table and stats:')
+    print('\n==== Resulting table and stats after delete:')
     # (0, 320)
     # (1, 'hello world')
     # (2, 'hello')
