@@ -2,7 +2,7 @@
 
 Hash table and dictionary class implementation using lists and double-linked lists.
 
-## Reference
+## References
 
 [Problem Solving with Algorithms and Data Structures](runestone.academy/runestone/books/published/pythonds/index.html), by Miller and Ranum.
 
